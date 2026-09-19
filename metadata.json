@@ -1,0 +1,6 @@
+{
+  "name": "AgroGenesis — Intelligent Agriculture AI Agent",
+  "description": "An intelligent precision agriculture agent localized for Indian crops, monsoon weather patterns, ICAR benchmarks, Soil Health Card NPK validation, and zero-fabrication safety rules.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
