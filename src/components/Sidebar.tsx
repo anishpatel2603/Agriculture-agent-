@@ -1,21 +1,12 @@
 import React from 'react';
 import {
   LayoutDashboard,
-  Sprout,
-  Activity,
-  Cpu,
-  Droplet,
   FlaskConical,
   ScanEye,
   Bell,
   History,
-  FlaskRound,
   Network,
   BookOpen,
-  Settings,
-  Wrench,
-  Brain,
-  BarChart3,
 } from 'lucide-react';
 import { useTranslation } from '../locales/LanguageContext';
 
@@ -36,19 +27,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   const mainNav = [
     { id: 'dashboard', label: t.nav.dashboard, icon: LayoutDashboard },
-    { id: 'agent', label: t.nav.agent, icon: Cpu },
-    { id: 'tools', label: t.nav.tools || 'Tool Registry & Workbench', icon: Wrench },
-    { id: 'memory', label: t.nav.memory || 'Agent Memory Inspector', icon: Brain },
-    { id: 'metrics', label: t.nav.metrics || 'Agent Metrics & Safety', icon: BarChart3 },
-    { id: 'plots', label: t.nav.plots, icon: Sprout },
-    { id: 'sensors', label: t.nav.sensors, icon: Activity },
-    {
-      id: 'irrigation',
-      label: t.nav.irrigation,
-      icon: Droplet,
-      badge: pendingDecisionsCount > 0 ? pendingDecisionsCount : undefined,
-      badgeColor: 'bg-blue-100 text-blue-800',
-    },
     { id: 'fertilization', label: t.nav.fertilization, icon: FlaskConical },
     { id: 'cropHealth', label: t.nav.cropHealth, icon: ScanEye },
     {
@@ -62,10 +40,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   ];
 
   const academicNav = [
-    { id: 'scenarios', label: t.nav.scenarios, icon: FlaskRound },
     { id: 'architecture', label: t.nav.architecture, icon: Network },
     { id: 'peas', label: t.nav.peas, icon: BookOpen },
-    { id: 'settings', label: t.nav.settings, icon: Settings },
   ];
 
   return (

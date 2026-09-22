@@ -15,8 +15,6 @@ import { Sidebar } from './components/Sidebar';
 import { DashboardView } from './components/DashboardView';
 import { PlotManagementView } from './components/PlotManagementView';
 import { LiveSensorView } from './components/LiveSensorView';
-import { AgentControlCenterView } from './components/AgentControlCenterView';
-import { AgentToolWorkbenchView } from './components/AgentToolWorkbenchView';
 import { AgentMemoryInspectorView } from './components/AgentMemoryInspectorView';
 import { AgentMetricsView } from './components/AgentMetricsView';
 import { IrrigationDecisionsView } from './components/IrrigationDecisionsView';
@@ -225,23 +223,6 @@ export default function App() {
               />
             )}
 
-            {currentPage === 'agent' && (
-              <AgentControlCenterView
-                systemStatus={systemStatus}
-                logs={logs}
-                decisions={decisions}
-                actions={actions}
-                plots={plots}
-                onToggleSimulation={handleToggleSimulation}
-                onChangeSpeed={handleChangeSpeed}
-                onTriggerCycle={handleTriggerCycle}
-                onApproveDecision={handleApproveDecision}
-                onRejectDecision={handleRejectDecision}
-                onNavigateToTools={() => setCurrentPage('tools')}
-              />
-            )}
-
-            {currentPage === 'tools' && <AgentToolWorkbenchView />}
 
             {currentPage === 'memory' && <AgentMemoryInspectorView />}
 

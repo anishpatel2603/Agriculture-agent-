@@ -206,15 +206,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <div className="flex items-center justify-between text-stone-500">
             <span className="text-xs font-medium uppercase tracking-wider">{t.nav.alerts}</span>
             <AlertTriangle
-              className={`h-4 w-4 ${
-                activeAlerts.length > 0 ? 'text-rose-600' : 'text-stone-400'
-              }`}
+              className={`h-4 w-4 ${activeAlerts.length > 0 ? 'text-rose-600' : 'text-stone-400'
+                }`}
             />
           </div>
           <div
-            className={`mt-2 text-2xl font-bold ${
-              activeAlerts.length > 0 ? 'text-rose-600' : 'text-stone-900'
-            }`}
+            className={`mt-2 text-2xl font-bold ${activeAlerts.length > 0 ? 'text-rose-600' : 'text-stone-900'
+              }`}
           >
             {activeAlerts.length}
           </div>
@@ -249,13 +247,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-stone-900 text-sm">{dec.plotName}</span>
                     <span
-                      className={`rounded px-2 py-0.5 text-[10px] font-bold ${
-                        dec.priority === 'CRITICAL'
+                      className={`rounded px-2 py-0.5 text-[10px] font-bold ${dec.priority === 'CRITICAL'
                           ? 'bg-rose-100 text-rose-800'
                           : dec.priority === 'HIGH'
-                          ? 'bg-amber-100 text-amber-800'
-                          : 'bg-blue-100 text-blue-800'
-                      }`}
+                            ? 'bg-amber-100 text-amber-800'
+                            : 'bg-blue-100 text-blue-800'
+                        }`}
                     >
                       {dec.priority} PRIORITY
                     </span>
@@ -365,15 +362,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     </div>
 
                     <span
-                      className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                        plot.status === 'OPTIMAL'
+                      className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${plot.status === 'OPTIMAL'
                           ? 'bg-emerald-100 text-emerald-800'
                           : plot.status === 'ATTENTION_NEEDED'
-                          ? 'bg-amber-100 text-amber-800'
-                          : plot.status === 'CRITICAL'
-                          ? 'bg-rose-100 text-rose-800'
-                          : 'bg-purple-100 text-purple-800'
-                      }`}
+                            ? 'bg-amber-100 text-amber-800'
+                            : plot.status === 'CRITICAL'
+                              ? 'bg-rose-100 text-rose-800'
+                              : 'bg-purple-100 text-purple-800'
+                        }`}
                     >
                       {plot.status.replace(/_/g, ' ')}
                     </span>
@@ -405,13 +401,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-stone-500">Soil Moisture (VWC)</span>
                       <span
-                        className={`font-bold font-mono text-sm ${
-                          isBelowMin
+                        className={`font-bold font-mono text-sm ${isBelowMin
                             ? 'text-amber-600'
                             : isAboveMax
-                            ? 'text-purple-600'
-                            : 'text-emerald-700'
-                        }`}
+                              ? 'text-purple-600'
+                              : 'text-emerald-700'
+                          }`}
                       >
                         {plot.currentMoisture.toFixed(1)}%
                       </span>
@@ -430,13 +425,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                       ></div>
                       {/* Current Value Marker */}
                       <div
-                        className={`h-full rounded-full transition-all duration-500 ${
-                          isBelowMin
+                        className={`h-full rounded-full transition-all duration-500 ${isBelowMin
                             ? 'bg-amber-500'
                             : isAboveMax
-                            ? 'bg-purple-500'
-                            : 'bg-emerald-600'
-                        }`}
+                              ? 'bg-purple-500'
+                              : 'bg-emerald-600'
+                          }`}
                         style={{ width: `${Math.min(100, Math.max(5, plot.currentMoisture))}%` }}
                       ></div>
                     </div>
@@ -573,9 +567,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     className="flex items-start space-x-2 rounded-lg border border-stone-100 bg-stone-50 p-2 text-xs"
                   >
                     <AlertTriangle
-                      className={`h-4 w-4 shrink-0 mt-0.5 ${
-                        a.severity === 'CRITICAL' ? 'text-rose-600' : 'text-amber-600'
-                      }`}
+                      className={`h-4 w-4 shrink-0 mt-0.5 ${a.severity === 'CRITICAL' ? 'text-rose-600' : 'text-amber-600'
+                        }`}
                     />
                     <div className="flex-1">
                       <div className="flex items-center justify-between">

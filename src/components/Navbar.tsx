@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Play,
-  Pause,
   Zap,
   Bot,
   CloudSun,
@@ -182,43 +180,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           ))}
         </div>
 
-        {/* Simulation Speed & Pause/Play */}
-        <div className="hidden sm:flex items-center space-x-1 rounded-lg border border-stone-200 bg-stone-50 p-0.5 text-xs">
-          <button
-            onClick={onToggleSimulation}
-            title={systemStatus.isSimulating ? 'Pause Simulation' : 'Resume Simulation'}
-            className="flex h-7 w-7 items-center justify-center rounded-md text-stone-700 hover:bg-stone-200"
-          >
-            {systemStatus.isSimulating ? (
-              <Pause className="h-3.5 w-3.5 text-stone-800" />
-            ) : (
-              <Play className="h-3.5 w-3.5 text-emerald-700" />
-            )}
-          </button>
-          {[1, 2, 5].map((s) => (
-            <button
-              key={s}
-              onClick={() => onChangeSpeed(s)}
-              className={`px-1.5 py-0.5 rounded text-[11px] font-medium transition-colors ${
-                systemStatus.simulationSpeed === s
-                  ? 'bg-emerald-700 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-900'
-              }`}
-            >
-              {s}x
-            </button>
-          ))}
-        </div>
 
-        {/* Single Cycle Step button */}
-        <button
-          onClick={onTriggerCycle}
-          title="Trigger immediate agent perception & decision step"
-          className="hidden sm:flex items-center space-x-1 rounded-lg border border-stone-200 bg-stone-50 px-2 py-1.5 text-xs font-medium text-stone-700 hover:bg-stone-100"
-        >
-          <Zap className="h-3.5 w-3.5 text-amber-600" />
-          <span>Step</span>
-        </button>
 
         {/* Theme Toggle (Light / Dark Mode) */}
         <button

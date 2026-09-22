@@ -211,7 +211,7 @@ export const AssistantChatModal: React.FC<AssistantChatModalProps> = ({
   return (
     <div
       id="assistant-chat-modal"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-stone-900/40 p-4 backdrop-blur-xs"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs"
     >
       <div className="flex h-[88vh] w-full max-w-3xl flex-col rounded-2xl bg-white shadow-2xl border border-stone-200 overflow-hidden">
         {/* Header */}
@@ -246,10 +246,10 @@ export const AssistantChatModal: React.FC<AssistantChatModalProps> = ({
         </div>
 
         {/* Guardrail Banner */}
-        <div className="bg-amber-50/90 px-4 py-2 text-[11px] text-amber-900 border-b border-amber-200 flex items-center space-x-2">
-          <ShieldCheck className="h-4 w-4 text-amber-700 shrink-0" />
+        <div className="bg-amber-500/10 px-4 py-2.5 text-[11px] text-amber-800 dark:text-amber-200 border-b border-amber-500/20 flex items-center space-x-2">
+          <ShieldCheck className="h-4 w-4 text-amber-600 dark:text-amber-400 shrink-0" />
           <span>
-            <strong>Intent-Driven & Zero-Fabrication Guardrail:</strong> Responses answer your specific inquiry directly using allowlisted tools. Chemical recommendations are strictly withheld unless verified by KVK Soil Health Cards.
+            <strong className="text-amber-900 dark:text-amber-100">Intent-Driven & Zero-Fabrication Guardrail:</strong> Responses answer your specific inquiry directly using allowlisted tools. Chemical recommendations are strictly withheld unless verified by KVK Soil Health Cards.
           </span>
         </div>
 
@@ -267,7 +267,7 @@ export const AssistantChatModal: React.FC<AssistantChatModalProps> = ({
                 className={`max-w-[90%] sm:max-w-[82%] rounded-2xl p-4 text-xs sm:text-sm leading-relaxed ${
                   m.sender === 'user'
                     ? 'bg-emerald-800 text-white shadow-xs'
-                    : 'bg-stone-50 text-stone-900 border border-stone-200 shadow-xs'
+                    : 'bg-stone-100/80 dark:bg-stone-800/80 text-stone-900 dark:text-stone-100 border border-stone-200 dark:border-stone-700/60 shadow-xs'
                 }`}
               >
                 <div className="whitespace-pre-line font-sans">{m.text}</div>
@@ -356,8 +356,8 @@ export const AssistantChatModal: React.FC<AssistantChatModalProps> = ({
         </div>
 
         {/* Dynamic Quick Questions */}
-        <div className="border-t border-stone-200 bg-stone-50/80 p-3">
-          <div className="text-[10px] uppercase font-bold tracking-wider text-stone-500 mb-1.5 px-1">
+        <div className="border-t border-stone-200 dark:border-stone-800 bg-stone-50/60 dark:bg-stone-900/90 p-3">
+          <div className="text-[10px] uppercase font-bold tracking-wider text-stone-500 dark:text-stone-400 mb-1.5 px-1">
             Test Inquiries & Suggested Questions:
           </div>
           <div className="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto pr-1">
@@ -366,7 +366,7 @@ export const AssistantChatModal: React.FC<AssistantChatModalProps> = ({
                 key={idx}
                 onClick={() => handleSend(q)}
                 disabled={isLoading}
-                className="rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-[11px] font-medium text-stone-700 hover:bg-emerald-50 hover:text-emerald-900 hover:border-emerald-300 transition-colors shadow-2xs"
+                className="rounded-lg border border-stone-200 dark:border-stone-700/70 bg-white dark:bg-stone-800 px-2.5 py-1 text-[11px] font-medium text-stone-700 dark:text-stone-200 hover:bg-emerald-50 dark:hover:bg-emerald-950/60 hover:text-emerald-900 dark:hover:text-emerald-300 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors shadow-2xs"
               >
                 {q}
               </button>
@@ -375,7 +375,7 @@ export const AssistantChatModal: React.FC<AssistantChatModalProps> = ({
         </div>
 
         {/* Input Bar */}
-        <div className="border-t border-stone-200 p-3 bg-white">
+        <div className="border-t border-stone-200 dark:border-stone-800 p-3 bg-white dark:bg-stone-900">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -394,7 +394,7 @@ export const AssistantChatModal: React.FC<AssistantChatModalProps> = ({
                   ? `आपला शेतीविषयक प्रश्न विचारा (उदा. 'सध्या पिकाला पाणी द्यावे का?')...`
                   : `Ask any farm question (e.g. 'What is your role?', 'What is current soil moisture?')...`
               }
-              className="flex-1 rounded-xl border border-stone-300 p-3 text-xs sm:text-sm text-stone-900 focus:border-emerald-700 focus:outline-hidden shadow-2xs"
+              className="flex-1 rounded-xl border border-stone-300 dark:border-stone-700 bg-stone-50/50 dark:bg-stone-800/80 p-3 text-xs sm:text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:border-emerald-700 focus:outline-hidden shadow-2xs"
             />
             <button
               type="submit"
